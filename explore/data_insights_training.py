@@ -20,10 +20,10 @@ train_set, test_set = train_test_split(
 )
 print(len(train_set), "train |", len(test_set), "test")
 
-housing_districts_training = train_set.copy()
+housing_districts = train_set.copy()
 
-housing_districts = housing_districts_training.drop("median_house_value", axis=1)
-housing_districts_labels = housing_districts_training["median_house_value"].copy()
+# housing_districts = housing_districts_training.drop("median_house_value", axis=1)
+# housing_districts_labels = housing_districts_training["median_house_value"].copy()
 
 # Look for correlations
 
@@ -41,6 +41,7 @@ housing_districts.plot(
     y="median_house_value"
     # alpha=0.1
 )
+# plt.savefig('scatter_plot_income.png')
 
 plt.show()
 
@@ -61,7 +62,7 @@ housing_districts["total_rooms"]/housing_districts["households"]
 housing_districts["bedrooms_per_household"] = \
 housing_districts["total_bedrooms"]/housing_districts["households"]
 
-Handle categorical attributes
+# Handle categorical attributes
 encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
 
 tr_ocean_proximity = encoder.fit_transform(housing_districts[["ocean_proximity"]])

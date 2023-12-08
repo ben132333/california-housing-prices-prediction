@@ -33,9 +33,10 @@ housing_districts_copy.plot(
 # plt.savefig('scatter_plot_prices.png')
 
 # Histograms to explore the data
-# housing_districts_copy.hist(
-#     bins=50, 
-#     figsize=(15, 7)
-# )
+housing_districts_copy.hist(
+    bins=50, 
+    figsize=(15, 7)
+)
+# plt.savefig('var_hist.png')
 
 plt.show()
